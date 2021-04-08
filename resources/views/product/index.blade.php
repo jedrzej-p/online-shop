@@ -5,7 +5,10 @@
     <div class="row justify-content-center">
         @if (count($products) > 0)
             @foreach ($products as $product)
-                <p>{{ $product->name }}</p>
+                <div class="col-12">
+                    {{ $product->name }}
+                    <a href="{{ route('product_detail', [$product->id, $product->name]) }}">Przejdź</a>
+                </div>
             @endforeach
         @endif
     </div>

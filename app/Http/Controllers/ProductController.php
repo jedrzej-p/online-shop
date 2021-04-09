@@ -8,7 +8,7 @@ use App\Models\Product;
 class ProductController extends Controller
 {
     public function mainIndex() {
-        $products = Product::where('is_active', 1)->take(4)->get();
+        $products = Product::where('is_active', 1)->orderBy('created_at', 'desc')->take(4)->get();
 
         return view('main')->with(['products' => $products]);
     }

@@ -24,3 +24,7 @@ Route::get("/koszyk", "CartController@index")->name('cart.index');
 Route::post("/koszyk", "CartController@store")->name('cart.store');
 Route::put("/koszyk/{id}", "CartController@update")->name('cart.update');
 Route::delete("/koszyk/usun/{id}", "CartController@destroy")->name('cart.destroy');
+
+// Order route
+Route::post('/zamowienie', 'OrderController@store')->name('order.store');
+Route::get('/zamowienie', 'OrderController@index')->name('order.index');

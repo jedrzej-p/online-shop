@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+@if ( session()->exists('message') )
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-danger">
+                    <p style="text-align: center; font-weight: bold; font-size: 1.25em;">{!! session('message') !!}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+@endif
 <div class="container">
     <div class="row justify-content-center product-detail">
         <div class="col-12 col-lg-6">

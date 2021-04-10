@@ -20,4 +20,11 @@ class Order extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function setNewOrderNumber() {
+        $maxNumber = static::max('nr');
+        $firstPartInt = (int)explode('-', $maxNumber)[0];
+        $increment = sprintf('%04d/', $firstPartInt + 1);
+        $this->nr = $increment . date_format(new DateTime($this->data), 'm/y');
+    }
 }

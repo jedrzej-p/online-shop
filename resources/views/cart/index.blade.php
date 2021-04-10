@@ -64,9 +64,9 @@
                                     <div class="col-lg-12 col-7 text-right"><b>Suma: {!! number_format($total, 2, ',', ' ') . ' zł' !!}</b></div>
                                 </div>
                             </div>
-                            {{-- <div class="col-4">
-                                {!! link_to_route( 'order.index', 'Zamów', [], [ 'class' => 'btn btn-register btn-lg make-order-btn' ] ); !!}
-                            </div> --}}
+                            <div class="col-12 justify-content-end d-flex px-0 pt-3">
+                                <a class="btn btn-primary" href="{{ route('order.index') }}">Przejdź dalej</a>
+                            </div>
                         @else
                             <p>Koszyk jest pusty</p>
                         @endif

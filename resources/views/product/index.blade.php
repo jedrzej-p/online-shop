@@ -13,7 +13,9 @@
                         @endif
                         <p class="col-12 product-name px-2 mb-0 pb-0">{{ $product->name }}</p>
                         <p class="col-12 product-price px-2">{{ $product->price }}<small> zł</small></p>
-                        <a href="{{ route('product_detail', [$product->id, $product->name]) }}">Przejdź</a>
+                        <div class="col-12 d-flex justify-content-center pb-2">
+                            <a class="btn btn-success" href="{{ route('product_detail', [$product->id, $product->name]) }}">Przejdź</a>
+                        </div>
                     </div>
                 </div>
             @endforeach

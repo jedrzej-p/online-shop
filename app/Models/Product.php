@@ -13,6 +13,6 @@ class Product extends Model
 
     public function positions()
     {
-        return $this->belongsTo('App\Models\OrderPositions', 'product_id', 'id');
+        return $this->belongsTo(OrderPosition::class);
     }
 }

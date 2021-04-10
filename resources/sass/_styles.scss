@@ -10,3 +10,10 @@
     background-color: white;
     box-shadow: 1px 1px 6px 1px darkgray;
 }
+.cart-item {
+    .product-remove {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+    }
+}

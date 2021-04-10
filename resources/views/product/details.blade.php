@@ -12,11 +12,13 @@
         <div class="col-12 col-lg-6 pt-3">
             <h1>{{ $product->name }}</h1>
             <small>Kod produktu: {{ $product->id }}</small>
-            <form action="" class="pt-3 form-inline">
+            <form action="{{ route('cart.store') }}" method="POST" class="pt-3 form-inline">
+                {{ csrf_field() }}
                 <div class="form-group mr-2">
                     <label for="formAmountInput" class="mr-2">Ilość:</label>
-                    <input class="form-control" type="number" name="amount" id="formAmountInput" min="1" step="1" max="{{ $product->amount }}">
+                    <input class="form-control" type="number" name="amount" id="formAmountInput" value="1" min="1" step="1" max="{{ $product->amount }}">
                 </div>
+                <input type="hidden" name="product_id" value="{{ $product->id }}" />
                 <button type="submit" class="btn btn-primary">Dodaj do koszyka</button>
             </form>
         </div>

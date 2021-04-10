@@ -18,3 +18,9 @@ Route::get('/profil', [App\Http\Controllers\HomeController::class, 'index'])->na
 Route::get('/', 'ProductController@mainIndex')->name('main');
 Route::get('/produkty','ProductController@index')->name('products');
 Route::get('/produkt/{id}-{name}','ProductController@details')->name('product_detail');
+
+// Cart routes
+Route::get("/koszyk", "CartController@index")->name('cart.index');
+Route::post("/koszyk", "CartController@store")->name('cart.store');
+Route::put("/koszyk/{id}", "CartController@update")->name('cart.update');
+Route::delete("/koszyk/usun/{id}", "CartController@destroy")->name('cart.destroy');

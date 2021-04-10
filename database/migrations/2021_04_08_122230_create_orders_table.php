@@ -17,7 +17,6 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('doc_number', 13);
             $table->decimal('value', 7, 2, true);
-            $table->unsignedSmallInteger('amount');
             $table->boolean('is_paid');
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('transport_id')->constrained('transports');
